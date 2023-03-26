@@ -1,11 +1,60 @@
-row1 = ['🔲','🔲','🔲']
-row2 = ['🔲','🔲','🔲']
-row3 = ['🔲','🔲','🔲']
-map = [row1,row2,row3]
-print(f'{row1}\n{row2}\n{row3}')
-position = input('Where do you want to put the treasure = ')
-print(position)
-a = int(position[0])
-b = int(position[1])
-map[a-1][b-1] = 'X'
-print(f'{row1}\n{row2}\n{row3}')
+#Rock Paper Scissors
+
+import random
+
+def PrintChoose(choosen):
+    if choosen == 0:
+        print(rock)
+    elif choosen == 1:
+        print(paper)
+    elif choosen == 2:
+        print(scissors)
+    else:
+        print('You Enter Wrong Number ')
+        choose = int(input('What do you choose? Type 0 for ROCK, 1 for PAPER, 2 for SCISSORS. '))
+        PrintChoose(choose)
+def Rules(you_chos,comp_chos):
+    if you_chos == comp_chos:
+        print('Match is Draw')
+    elif you_chos ==0 & comp_chos == 1 | you_chos == 2 & comp_chos == 1 | you_chos == 1 & comp_chos == 0 :
+        print('You Won')
+    else:
+        print('You Lose')
+
+    
+
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+play = 0
+while (play == 0):
+    choose = int(input('What do you choose? Type 0 for ROCK, 1 for PAPER, 2 for SCISSORS. '))
+    PrintChoose(choose)
+    computer_choose = random.randint(0,2)
+    print(f'Computer Choose')
+    PrintChoose(computer_choose)
+    Rules(choose, computer_choose)
+    play = int(input('\nTo PLay Again Type 0 = '))

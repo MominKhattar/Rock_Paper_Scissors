@@ -16,8 +16,12 @@ def PrintChoose(choosen):
 def Rules(you_chos,comp_chos):
     if you_chos == comp_chos:
         print('Match is Draw')
-    elif you_chos ==0 & comp_chos == 1 | you_chos == 2 & comp_chos == 1 | you_chos == 1 & comp_chos == 0 :
-        print('You Won')
+    elif you_chos ==0 & comp_chos == 2 :
+        print('You WON')
+    elif  you_chos == 2 & comp_chos == 1:
+        print('You WON')
+    elif you_chos == 1 & comp_chos == 0 :
+        print('You WON')
     else:
         print('You Lose')
 
